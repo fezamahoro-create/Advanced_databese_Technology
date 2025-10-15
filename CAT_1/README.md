@@ -76,12 +76,3 @@ It is implemented in **PostgreSQL** with **strong primary and foreign key constr
 
 ---
 
-## Sample Queries
-
-**1. Total Incidents by District**
-```sql
-SELECT d.District, COUNT(i.IncidentID) AS TotalIncidents
-FROM Incident i
-JOIN DispatchCenter d ON i.CenterID = d.CenterID
-GROUP BY d.District
-ORDER BY TotalIncidents DESC;
